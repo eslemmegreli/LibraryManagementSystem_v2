@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbKUTUPHANEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.sysdiagrams' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.TBLADMIN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kullanici" Type="varchar" MaxLength="20" />
+    <Property Name="Sifre" Type="varchar" MaxLength="20" />
+    <Property Name="Yetki" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.TBLCEZA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLCEZA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UYE" Type="int" />
+    <Property Name="BASLANGIC" Type="smalldatetime" />
+    <Property Name="BITIS" Type="smalldatetime" />
+    <Property Name="PARA" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="HAREKET" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.TBLDUYURULAR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLDUYURULAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KATEGORI" Type="varchar" MaxLength="50" />
+    <Property Name="ICERIK" Type="varchar" MaxLength="200" />
+    <Property Name="TARIH" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.tblHAKKIMIZDA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblHAKKIMIZDA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ACIKLAMA" Type="varchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.TBLHAREKET' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLHAREKET">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KITAP" Type="int" />
+    <Property Name="UYE" Type="int" />
+    <Property Name="PERSONEL" Type="tinyint" />
+    <Property Name="ALISTARIH" Type="smalldatetime" />
+    <Property Name="IADETARIH" Type="smalldatetime" />
+    <Property Name="UYEGETIRTARIH" Type="smalldatetime" />
+    <Property Name="ISLEMDURUM" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.tblILETISIM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblILETISIM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AD" Type="varchar" MaxLength="50" />
+    <Property Name="MAIL" Type="varchar" MaxLength="50" />
+    <Property Name="KONU" Type="varchar" MaxLength="50" />
+    <Property Name="MESAJ" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.TBLKASA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLKASA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AY" Type="varchar" MaxLength="10" />
+    <Property Name="TUTAR" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.TBLKATEGORİ' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLKATEGORİ">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AD" Type="varchar" MaxLength="20" />
+    <Property Name="DURUM" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.TBLKITAP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLKITAP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AD" Type="varchar" MaxLength="50" />
+    <Property Name="KATEGORİ" Type="tinyint" />
+    <Property Name="YAZAR" Type="int" />
+    <Property Name="BASIMYIL" Type="char" MaxLength="4" />
+    <Property Name="YAYINEVI" Type="varchar" MaxLength="50" />
+    <Property Name="SAYFA" Type="varchar" MaxLength="4" />
+    <Property Name="DURUM" Type="bit" />
+    <Property Name="KITAPRESIM" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.TBLMESAJLAR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLMESAJLAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GONDEREN" Type="varchar" MaxLength="50" />
+    <Property Name="ALICI" Type="varchar" MaxLength="50" />
+    <Property Name="KONU" Type="varchar" MaxLength="50" />
+    <Property Name="ICERIK" Type="varchar" MaxLength="500" />
+    <Property Name="TARIH" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.TBLPERSONEL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLPERSONEL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PERSONEL" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.TBLUYELER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLUYELER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AD" Type="varchar" MaxLength="20" />
+    <Property Name="SOYAD" Type="varchar" MaxLength="20" />
+    <Property Name="MAIL" Type="varchar" MaxLength="50" />
+    <Property Name="KULLANICIADI" Type="varchar" MaxLength="20" />
+    <Property Name="SİFRE" Type="varchar" MaxLength="20" />
+    <Property Name="FOTOGRAF" Type="varchar" MaxLength="250" />
+    <Property Name="TELEFON" Type="varchar" MaxLength="20" />
+    <Property Name="OKUL" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbKUTUPHANE.dbo.TBLYAZAR' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLYAZAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AD" Type="varchar" MaxLength="30" />
+    <Property Name="SOYAD" Type="varchar" MaxLength="30" />
+    <Property Name="DETAY" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <Function Name="EnBasariliPersonel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="EnBasariliUye" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="EnCokOkunanKitap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="FazlaKitapYazar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="dbKUTUPHANEModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [sysdiagrams].[name] AS [name], 
+    [sysdiagrams].[principal_id] AS [principal_id], 
+    [sysdiagrams].[diagram_id] AS [diagram_id], 
+    [sysdiagrams].[version] AS [version], 
+    [sysdiagrams].[definition] AS [definition]
+    FROM [dbo].[sysdiagrams] AS [sysdiagrams]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLADMIN" EntityType="Self.TBLADMIN" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLADMIN].[ID] AS [ID], 
+    [TBLADMIN].[Kullanici] AS [Kullanici], 
+    [TBLADMIN].[Sifre] AS [Sifre], 
+    [TBLADMIN].[Yetki] AS [Yetki]
+    FROM [dbo].[TBLADMIN] AS [TBLADMIN]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLCEZA" EntityType="Self.TBLCEZA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLCEZA].[ID] AS [ID], 
+    [TBLCEZA].[UYE] AS [UYE], 
+    [TBLCEZA].[BASLANGIC] AS [BASLANGIC], 
+    [TBLCEZA].[BITIS] AS [BITIS], 
+    [TBLCEZA].[PARA] AS [PARA], 
+    [TBLCEZA].[HAREKET] AS [HAREKET]
+    FROM [dbo].[TBLCEZA] AS [TBLCEZA]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLDUYURULAR" EntityType="Self.TBLDUYURULAR" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLDUYURULAR].[ID] AS [ID], 
+    [TBLDUYURULAR].[KATEGORI] AS [KATEGORI], 
+    [TBLDUYURULAR].[ICERIK] AS [ICERIK], 
+    [TBLDUYURULAR].[TARIH] AS [TARIH]
+    FROM [dbo].[TBLDUYURULAR] AS [TBLDUYURULAR]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblHAKKIMIZDA" EntityType="Self.tblHAKKIMIZDA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblHAKKIMIZDA].[ID] AS [ID], 
+    [tblHAKKIMIZDA].[ACIKLAMA] AS [ACIKLAMA]
+    FROM [dbo].[tblHAKKIMIZDA] AS [tblHAKKIMIZDA]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLHAREKET" EntityType="Self.TBLHAREKET" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLHAREKET].[ID] AS [ID], 
+    [TBLHAREKET].[KITAP] AS [KITAP], 
+    [TBLHAREKET].[UYE] AS [UYE], 
+    [TBLHAREKET].[PERSONEL] AS [PERSONEL], 
+    [TBLHAREKET].[ALISTARIH] AS [ALISTARIH], 
+    [TBLHAREKET].[IADETARIH] AS [IADETARIH], 
+    [TBLHAREKET].[UYEGETIRTARIH] AS [UYEGETIRTARIH], 
+    [TBLHAREKET].[ISLEMDURUM] AS [ISLEMDURUM]
+    FROM [dbo].[TBLHAREKET] AS [TBLHAREKET]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblILETISIM" EntityType="Self.tblILETISIM" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tblILETISIM].[ID] AS [ID], 
+    [tblILETISIM].[AD] AS [AD], 
+    [tblILETISIM].[MAIL] AS [MAIL], 
+    [tblILETISIM].[KONU] AS [KONU], 
+    [tblILETISIM].[MESAJ] AS [MESAJ]
+    FROM [dbo].[tblILETISIM] AS [tblILETISIM]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLKASA" EntityType="Self.TBLKASA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLKASA].[ID] AS [ID], 
+    [TBLKASA].[AY] AS [AY], 
+    [TBLKASA].[TUTAR] AS [TUTAR]
+    FROM [dbo].[TBLKASA] AS [TBLKASA]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLKATEGORİ" EntityType="Self.TBLKATEGORİ" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLKATEGORİ].[ID] AS [ID], 
+    [TBLKATEGORİ].[AD] AS [AD], 
+    [TBLKATEGORİ].[DURUM] AS [DURUM]
+    FROM [dbo].[TBLKATEGORİ] AS [TBLKATEGORİ]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLKITAP" EntityType="Self.TBLKITAP" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLKITAP].[ID] AS [ID], 
+    [TBLKITAP].[AD] AS [AD], 
+    [TBLKITAP].[KATEGORİ] AS [KATEGORİ], 
+    [TBLKITAP].[YAZAR] AS [YAZAR], 
+    [TBLKITAP].[BASIMYIL] AS [BASIMYIL], 
+    [TBLKITAP].[YAYINEVI] AS [YAYINEVI], 
+    [TBLKITAP].[SAYFA] AS [SAYFA], 
+    [TBLKITAP].[DURUM] AS [DURUM], 
+    [TBLKITAP].[KITAPRESIM] AS [KITAPRESIM]
+    FROM [dbo].[TBLKITAP] AS [TBLKITAP]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLMESAJLAR" EntityType="Self.TBLMESAJLAR" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLMESAJLAR].[ID] AS [ID], 
+    [TBLMESAJLAR].[GONDEREN] AS [GONDEREN], 
+    [TBLMESAJLAR].[ALICI] AS [ALICI], 
+    [TBLMESAJLAR].[KONU] AS [KONU], 
+    [TBLMESAJLAR].[ICERIK] AS [ICERIK], 
+    [TBLMESAJLAR].[TARIH] AS [TARIH]
+    FROM [dbo].[TBLMESAJLAR] AS [TBLMESAJLAR]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLPERSONEL" EntityType="Self.TBLPERSONEL" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLPERSONEL].[ID] AS [ID], 
+    [TBLPERSONEL].[PERSONEL] AS [PERSONEL]
+    FROM [dbo].[TBLPERSONEL] AS [TBLPERSONEL]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLUYELER" EntityType="Self.TBLUYELER" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLUYELER].[ID] AS [ID], 
+    [TBLUYELER].[AD] AS [AD], 
+    [TBLUYELER].[SOYAD] AS [SOYAD], 
+    [TBLUYELER].[MAIL] AS [MAIL], 
+    [TBLUYELER].[KULLANICIADI] AS [KULLANICIADI], 
+    [TBLUYELER].[SİFRE] AS [SİFRE], 
+    [TBLUYELER].[FOTOGRAF] AS [FOTOGRAF], 
+    [TBLUYELER].[TELEFON] AS [TELEFON], 
+    [TBLUYELER].[OKUL] AS [OKUL]
+    FROM [dbo].[TBLUYELER] AS [TBLUYELER]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLYAZAR" EntityType="Self.TBLYAZAR" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLYAZAR].[ID] AS [ID], 
+    [TBLYAZAR].[AD] AS [AD], 
+    [TBLYAZAR].[SOYAD] AS [SOYAD], 
+    [TBLYAZAR].[DETAY] AS [DETAY]
+    FROM [dbo].[TBLYAZAR] AS [TBLYAZAR]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
